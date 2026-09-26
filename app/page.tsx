@@ -3,22 +3,22 @@
 import { useState } from "react";
 
 export default function Home() {
-  const [count, setCount] = useState(0);
+  const [name, setName] = useState("");
 
   return (
     <div>
-      <h1>Counter</h1>
+      <h1 className="text-3xl font-bold">
+  Hello!
+</h1>
 
-      <p>Count: {count}</p>
+      <input
+        type="text"
+        value={name}
+        onChange={(event) => setName(event.target.value)}
+        style={{ border: "1px solid black", padding: "5px" }}
+      />
 
-      <button onClick={() => setCount(count + 1)}>
-        +1
-      </button>
-
-      <button onClick={() => setCount(count - 1)}>
-        -1
-      </button>
-
+      <p>Your name is: {name}</p>
     </div>
   );
 }
