@@ -1,14 +1,24 @@
-import Link from "next/link";
-import Welcome from "./components/Welcome";
+"use client";
+
+import { useState } from "react";
 
 export default function Home() {
+  const [count, setCount] = useState(0);
+
   return (
     <div>
-      <h1>Hello Agash! 🚀</h1>
+      <h1>Counter</h1>
 
-      <Welcome />
+      <p>Count: {count}</p>
 
-      <Link href="/about">Go to About</Link>
+      <button onClick={() => setCount(count + 1)}>
+        +1
+      </button>
+
+      <button onClick={() => setCount(count - 1)}>
+        -1
+      </button>
+
     </div>
   );
 }

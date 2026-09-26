@@ -1,5 +1,7 @@
-export default function Welcome() {
-  return (
-    <h2>Welcome to my Next.js application! 👋</h2>
-  );
+type WelcomeProps = {
+  name: string;
+};
+
+export default function Welcome({ name }: WelcomeProps) {
+  return <h2>Welcome, {name}! 👋</h2>;
 }
